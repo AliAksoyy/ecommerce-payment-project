@@ -1,9 +1,9 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
-// const register = require("./routes/register");
+const register = require("./routes/register");
 // const login = require("./routes/login");
-// const stripe = require("./routes/stripe");
+const stripe = require("./routes/stripe");
 // const orders = require("./routes/orders");
 // const products = require("./routes/products");
 const path = require("path");
@@ -19,10 +19,10 @@ require("dotenv").config({
 app.use(express.json());
 app.use(cors());
 
-// app.use("/api/register", register);
+app.use("/api/register", register);
 // app.use("/api/login", login);
 // app.use("/api/orders", orders);
-// app.use("/api/stripe", stripe);
+app.use("/api/stripe", stripe);
 // app.use("/api/products", productsRoute);
 
 app.get("/", (req, res) => {
