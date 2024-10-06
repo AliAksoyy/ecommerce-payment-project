@@ -15,6 +15,7 @@ router.post("/", auth, async (req, res) => {
 });
 
 router.put("/:id", isAdmin, async (req, res) => {
+    
   try {
     const updatedOrder = await Order.findByIdAndUpdate(
       req.params.id,
