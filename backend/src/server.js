@@ -18,6 +18,7 @@ require("dotenv").config({
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
+app.use("/public", express.static(path.join(__dirname, "public")));
 
 app.use("/api/register", register);
 app.use("/api/login", login);

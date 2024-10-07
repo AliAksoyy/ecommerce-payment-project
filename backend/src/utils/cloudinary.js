@@ -1,7 +1,8 @@
 const dotenv = require("dotenv");
 const cloudinaryModule = require("cloudinary");
+const path = require("path");
 
-dotenv.config();
+dotenv.config({ path: path.join(__dirname, "..", "config", ".env") });
 const cloudinary = cloudinaryModule.v2;
 
 cloudinary.config({
